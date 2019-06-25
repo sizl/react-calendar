@@ -1,0 +1,237 @@
+.calendar-container,
+.calendar,
+.calendar-header,
+td,
+tr {
+    padding: 0;
+    margin: 0;
+}
+calendar-container {
+  position: relative;
+}
+
+.calendar tbody td {
+    border: 1px solid #c7c7c0;
+    background-color: white;
+    width: 14%;
+    height: 70px;
+
+    &.emptySlot {
+        background: #fbfbfb;
+    }
+    &.week-day {
+      height: 40px;
+    }
+
+    &.day:hover {
+      background-color: #fffcef;
+    }
+    &.today {
+      background-color: skyblue;
+    }
+}
+
+.calendar {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 95%;
+}
+
+.calendar-header {
+    font-size: 1.6em;
+}
+
+.calendar-header td {
+    border-spacing: 0;
+    height: 60px;
+}
+
+.week-day {
+    font-size: 0.8em;
+    text-align: right;
+    padding-right: 5px;
+}
+
+.day {
+    font-size: 0.8em;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    padding: 0px 5px 5px 5px;
+
+    .date-num {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      line-height: 1em;
+    }
+
+    .calendar-item {
+      line-height: 1.2em;
+      border-radius: 3px;
+      padding: 0 2px;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: skyblue;
+      }
+
+      &:before {
+        content: "•";
+        margin-right: .25em;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .preview {
+        text-overflow: ellipsis;
+        width: 75px;
+        display: inline-block;
+        vertical-align: top;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+}
+
+.current-day {
+    background-color: #f5fdff !important;
+}
+
+.current-day {
+  background-color: #f0fbff !important;
+}
+
+.selected-day {
+    background-color:yellow;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 2%;
+    color: black;
+}
+
+.month-popup {
+  position: absolute;
+  background: white;
+  z-index: 500;
+  box-shadow: 0 1px 3px #ccc;
+  padding: 3px 6px 10px 6px;
+  margin-left: -12px;
+}
+
+.month-popup div {
+    button {
+      padding: 0.3em;
+      text-decoration: none;
+      display: block;
+      color: #333;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 24px;
+      cursor: pointer;
+      &:hover {
+        background-color: #E5E5E5;
+      }
+    }
+}
+
+.nav-month {
+    text-align: right;
+    > button {
+      font-size: 12px;
+      cursor: pointer;
+      background: none;
+      padding: 7px 17px;
+      margin: 0 0 0 7px;
+    }
+}
+
+.editor-year {
+    max-width: 3.6em;
+    font-size: 27px;
+}
+
+.label-month,
+.label-year {
+    cursor: pointer;
+
+    &:after {
+      content: '▼';
+      display: inline-block;
+      font-size: 12px;
+      margin-left: 5px;
+    }
+}
+
+.label-month {
+  margin-right: .6em;
+}
+
+#appointment-form-popup {
+  position: absolute;
+  visibility: hidden;
+  background: #fffcef;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px #ccc;
+  padding: 15px;
+  top: 0;
+  left: 0;
+  width: 250px;
+
+  &.in {
+    visibility: visible;
+    z-index: 500;
+  }
+  .close-btn {
+    float: right;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 18px;
+    position: relative;
+    top: -10px;
+    right: -13px;
+  }
+
+  h4 {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .form-group {
+
+    label {
+      font-size: 13px;
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: top;
+      width: 60px;
+      font-weight: normal;
+    }
+
+    input, select, textarea {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .display-value {
+      font-size: 14px;
+    }
+
+    textarea {
+      width: 180px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    button {
+      font-size: 14px;
+    }
+  }
+}
