@@ -22,6 +22,4 @@ If the server throws a "cross-origin" error, try deleting everything in local st
 
 https://react-calendar-scheduler.herokuapp.com/
 
-* Might be slow if the app is asleep *
-
-Please allow heroku app to warm up.
+\* Might be slow if the app is asleep. Please allow heroku app to warm up.
